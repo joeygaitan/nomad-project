@@ -1,5 +1,3 @@
-## Development branch
-
 ### Nomad Project
 
 ###### Local Installation Process
