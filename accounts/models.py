@@ -20,7 +20,7 @@ class Passenger(models.Model):
                                     help_text="The date and time this request was updated. Automatically generated when the model updates.")
     
     def __str__(self):
-        return self.author
+        return str(self.author)
 
     def get_absolute_url(self):
         """ Returns a fully-qualified path for a page (/passenger). """
@@ -33,7 +33,7 @@ class Passenger(models.Model):
             self.slug = slugify(self.author, allow_unicode=True)
 
         # Call save on the superclass.
-        return super(Page, self).save(*args, **kwargs)
+        return super(Passenger, self).save(*args, **kwargs)
 
 
 class Driver(models.Model):
@@ -50,7 +50,7 @@ class Driver(models.Model):
                                     help_text="The date and time availability was updated. Automatically generated when the model updates.")
 
     def __str__(self):
-        return self.author
+        return str(self.author)
 
     def get_absolute_url(self):
         """ Returns a fully-qualified path for a page (/driver). """
@@ -63,4 +63,4 @@ class Driver(models.Model):
             self.slug = slugify(self.author, allow_unicode=True)
 
         # Call save on the superclass.
-        return super(Page, self).save(*args, **kwargs)
+        return super(Driver, self).save(*args, **kwargs)

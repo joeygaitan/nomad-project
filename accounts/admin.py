@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Driver, Passenger
+from accounts.models import Driver, Passenger
 
 
 class PassengerAdmin(admin.ModelAdmin):
