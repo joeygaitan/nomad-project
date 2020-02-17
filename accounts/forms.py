@@ -1,6 +1,8 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
+from accounts.models import Profile
+
 
 class UserCreateForm(UserCreationForm):
     email = forms.EmailField(required=True,
@@ -23,3 +25,9 @@ class UserCreateForm(UserCreationForm):
         if User.objects.filter(email=self.cleaned_data['email']).exists():
             raise forms.ValidationError(self.fields['email'].error_messages['exists'])
         return self.cleaned_data['email']
+
+
+class ProfileForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = ('bio', 'location', 'birth_date')
