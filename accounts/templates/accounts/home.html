@@ -1,0 +1,26 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+
+{% if request.user.is_authenticated %}
+
+<div class="container-fluid">
+    <center><button><a href="#" class="btn btn-primary">Need A Ride?</a></button><br>
+    <button><a href="#" class="btn btn-primary">Where Are You Headed To?</a></button></center>
+    <!-- FOOTER -->
+    </div>
+
+{% else %}
+
+    <h3>Welcome to Nomad!</h3>
+    <button class="btn btn-primary" href="{% url 'login' %}">Log in</button>
+    <button class="btn btn-primary" href="{% url 'signup-page' %}">Sign up</button>
+{% endif %}
+
+
+
+
+{% endblock %}

@@ -28,6 +28,9 @@ class Sayhi(CreateView):
   def get(self, request):
       return render(request, "base.html")
 
+class Homepage(CreateView):
+    def get(self, request):
+        return render(request, "accounts/home.html")
 
 def index(request):
     return HttpResponse("Hello, world. You're at the polls index.")
