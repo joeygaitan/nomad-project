@@ -8,16 +8,29 @@
 {% if request.user.is_authenticated %}
 
 <div class="container-fluid">
-    <center><button><a href="#" class="btn btn-primary">Need A Ride?</a></button><br>
-    <button><a href="#" class="btn btn-primary">Where Are You Headed To?</a></button></center>
+
+    <form>
+        <center>
+        <button class="btn btn-primary" formaction="{% url 'login' %}">Need A Ride?</button>
+        <button class="btn btn-primary" formaction="{% url 'signup-page' %}">Where Are You Headed To?</button>
+        </center>
+    </form>
+
     <!-- FOOTER -->
     </div>
 
 {% else %}
 
     <h3>Welcome to Nomad!</h3>
-    <button class="btn btn-primary" href="{% url 'login' %}">Log in</button>
-    <button class="btn btn-primary" href="{% url 'signup-page' %}">Sign up</button>
+    <!-- Has to be an <a> for linking towork</a> -->
+
+    <form>
+        <center>
+        <button class="btn btn-primary" formaction="{% url 'login' %}">Log in</button>
+        <button class="btn btn-primary" formaction="{% url 'signup-page' %}">Sign up</button>
+        </center>
+
+    </form>
 {% endif %}
 
 
