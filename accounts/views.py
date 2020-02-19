@@ -59,6 +59,6 @@ class ProfilesListView(ListView):
     def get(self, request):
         """ GET a list of Pages. """
         profiles = self.get_queryset().all()
-        return render(request, 'accounts/home.html', {
+        return render(request, 'accounts/profile_list.html', {
           'profiles': profiles
         })
