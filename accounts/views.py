@@ -6,7 +6,8 @@ from django.urls import reverse_lazy
 from django.views.generic import CreateView
 from accounts.forms import UserCreateForm, ProfileForm
 from django.contrib import messages
-
+from accounts.models import Profile
+from django.views.generic.list import ListView
 
 
 class SignUpView(CreateView):
@@ -50,3 +51,14 @@ def update_profile(request):
     return render(request, 'accounts/profile.html', {
         'profile_form': profile_form
     })
+
+class ProfilesListView(ListView):
+    """ Renders a list of all Pages. """
+    model = Profile
+
+    def get(self, request):
+        """ GET a list of Pages. """
+        profiles = self.get_queryset().all()
+        return render(request, 'accounts/home.html', {
+          'profiles': profiles
+        })

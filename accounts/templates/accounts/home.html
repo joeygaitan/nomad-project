@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    {% if profiles %}
+        <div class="card-columns">
+        {% for profile in profiles %}
+            <p>{{ profile.location }}</p>
+        {% endfor %}
+        </div>
+    {% else %}
+        <div class="alert alert-primary" role="alert">No pages to display.</div>
+    {% endif %}
+
+{% endblock %}
