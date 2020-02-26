@@ -30,4 +30,4 @@ class UserCreateForm(UserCreationForm):
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ('bio', 'location', 'birth_date')
+        fields = ('starting', 'destination', 'is_passenger')
