@@ -21,10 +21,14 @@
             {% endfor %}
         {% else %}
             <div class="alert alert-primary" role="alert">No pages to display.</div>
+
         {% endif %}
 
     {% else %}
     <h1> Thanks for being a driver</h1>
+    <br><br>
+    <a href="{% url 'get-ride-page' %}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Edit Your Route</a>
+
     {% endif %}
     
 

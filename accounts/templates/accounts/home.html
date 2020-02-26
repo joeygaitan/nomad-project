@@ -12,7 +12,10 @@
     <form>
         <center>
         <button class="btn btn-primary" formaction="{% url 'get-ride-page' %}">Need A Ride?</button>
+        {% if request.user.profile.is_passenger %}
         <button class="btn btn-primary" formaction="{% url 'list-rides-page' %}">Available Rides</button>
+        {% else %}
+        {% endif %}
         </center>
     </form>
 
