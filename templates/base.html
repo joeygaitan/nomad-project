@@ -28,7 +28,8 @@
 
     <nav class="navbar navbar-expand-lg navbar-light bg-primary">
       <center><a href="{% url 'home-page' %}"><img src="{% static 'assets/thumb.png' %}" class="icon"></a></center>
-      <a class="navbar-brand" href="{% url 'home-page' %}"><i></i> Nomad</a>
+      <a class="navbar-brand" href="{% url 'home-page' %}"><i></i> Nomad {% if request.user.profile.is_passenger %} - Passenger {% else %} - Driver {% endif %}
+      </a>
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -45,6 +46,8 @@
               </strong>!
             </div>
           </form>
+          {% if request.user.is_authenticated %}
+
                 <ul class="navbar-nav mr-auto">
                       <li class="nav-item">
                         <a class="nav-link" href="{% url 'get-ride-page' %}">My Profile<span class="sr-only"></span></a>
@@ -75,9 +78,9 @@
                         <a class="nav-link" href="{% url 'signup-page' %}">Sign up</a>
                       </li>
                       {% endif %}
-                      
-
+          
                   </ul>
+                  {% endif %}
       </div>
     </nav>
 
