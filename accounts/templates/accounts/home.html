@@ -1,0 +1,39 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+
+{% if request.user.is_authenticated %}
+
+<div class="container-fluid">
+
+    <form>
+        <center>
+        <button class="btn btn-primary" formaction="{% url 'get-ride-page' %}">Need A Ride?</button>
+        <button class="btn btn-primary" formaction="{% url 'list-rides-page' %}">Available Rides</button>
+        </center>
+    </form>
+
+    <!-- FOOTER -->
+    </div>
+
+{% else %}
+
+    <h3>Welcome to Nomad!</h3>
+    <!-- Has to be an <a> for linking towork</a> -->
+
+    <form>
+        <center>
+        <button class="btn btn-primary" formaction="{% url 'login' %}">Log in</button>
+        <button class="btn btn-primary" formaction="{% url 'signup-page' %}">Sign up</button>
+        </center>
+
+    </form>
+{% endif %}
+
+
+
+
+{% endblock %}

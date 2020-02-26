@@ -6,7 +6,8 @@ from django.urls import reverse_lazy
 from django.views.generic import CreateView
 from accounts.forms import UserCreateForm, ProfileForm
 from django.contrib import messages
-
+from accounts.models import Profile
+from django.views.generic.list import ListView
 
 
 class SignUpView(CreateView):
@@ -27,6 +28,9 @@ class Sayhi(CreateView):
   def get(self, request):
       return render(request, "base.html")
 
+class Homepage(CreateView):
+    def get(self, request):
+        return render(request, "accounts/home.html")
 
 def index(request):
     return HttpResponse("Hello, world. You're at the polls index.")
@@ -42,7 +46,7 @@ def update_profile(request):
         if profile_form.is_valid():
             profile_form.save()
             messages.success(request, ('Your profile was successfully updated!'))
-            return redirect('index-page')
+            return redirect('get-ride-page')
         else:
             messages.error(request, ('Please correct the error below.'))
     else:
@@ -50,3 +54,14 @@ def update_profile(request):
     return render(request, 'accounts/profile.html', {
         'profile_form': profile_form
     })
+
+class ProfilesListView(ListView):
+    """ Renders a list of all Pages. """
+    model = Profile
+
+    def get(self, request):
+        """ GET a list of Pages. """
+        profiles = self.get_queryset().all()
+        return render(request, 'accounts/profile_list.html', {
+          'profiles': profiles
+        })
