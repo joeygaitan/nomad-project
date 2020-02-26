@@ -1,14 +1,9 @@
 from django.contrib import admin
-from accounts.models import Driver, Passenger
+from accounts.models import Profile
 
+# Register your models here.
 
-class PassengerAdmin(admin.ModelAdmin):
-    """ Show helpful fields on the changelist page. """
-    list_display = ('location', 'slug', 'author', 'created', 'modified')
+class ProfileAdmin(admin.ModelAdmin):
+    list_profile = ('bio', 'location', 'birth_date')
 
-class DriverAdmin(admin.ModelAdmin):
-    """ Show helpful fields on the changelist page. """
-    list_display = ('car', 'slug', 'author', 'created', 'modified')
-
-admin.site.register(Passenger, PassengerAdmin)
-admin.site.register(Driver, DriverAdmin)
+admin.site.register(Profile, ProfileAdmin)

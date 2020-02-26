@@ -1,8 +1,11 @@
 from django.urls import path
-from .views import SignUpView
-from django.urls import path, include
+from accounts.views import SignUpView, Sayhi, update_profile
+
 
 
 urlpatterns = [
-    path('signup', SignUpView.as_view(), name='signup'),
+    path('', views.index, name='index-page'),
+    path('sign_up/', SignUpView.as_view(), name='signup-page'),
+    path('say_hi/', Sayhi.as_view(), name="home-page"),
+    path('update_profile/', update_profile, name='update-profile-page')
 ]
