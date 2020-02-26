@@ -46,7 +46,7 @@ def update_profile(request):
         if profile_form.is_valid():
             profile_form.save()
             messages.success(request, ('Your profile was successfully updated!'))
-            return redirect('index-page')
+            return redirect('get-ride-page')
         else:
             messages.error(request, ('Please correct the error below.'))
     else:

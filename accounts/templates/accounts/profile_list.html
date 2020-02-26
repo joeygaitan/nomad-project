@@ -4,11 +4,16 @@
 
 {% block content %}
     {% if profiles %}
-        <div class="card-columns">
         {% for profile in profiles %}
-            <p>{{ profile.location }}</p>
+        <a href="#" class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1"> Username: {{ profile.user }}</h5>
+              <small class="text-muted">28 minutes ago</small>
+            </div>
+            <p class="mb-1"><img src="" style="height: 75px; width: auto"><br>I'm going to {{ profile.location }}</p>
+            <small><button>Request</button></small>
+            <hr class="breakline">
         {% endfor %}
-        </div>
     {% else %}
         <div class="alert alert-primary" role="alert">No pages to display.</div>
     {% endif %}
