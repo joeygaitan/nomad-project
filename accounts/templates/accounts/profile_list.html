@@ -3,7 +3,7 @@
 {% block title %}Nomad - Profiles{% endblock %}
 
 {% block content %}
-<h4><center>Available Rides</center></h4>
+<h4><center>Drivers</center></h4>
     {% if request.user.profile.is_passenger %}
         {% if profiles %}
             {% for profile in profiles %}
@@ -31,7 +31,7 @@
     <!-- Button with a list of riders -->
 
     <a href="{% url 'get-riders-page' %}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">View Hitchers</a>
-
+<br>
     <i class='mt-5 mb-3 fas fa-laptop' style='font-size:120px;color:white'></i>
     <i class="mt-5 mb-3 fa fa-car" style="font-size:120px;color:white;"></i>
 
