@@ -24,13 +24,15 @@
 
 {% else %}
 
-    <h3>Welcome to Nomad!</h3>
+    <center><h3>Welcome to Nomad!</h3></center>
     <!-- Has to be an <a> for linking towork</a> -->
 
     <form>
         <center>
         <button class="btn btn-primary" formaction="{% url 'login' %}">Log in</button>
-        <button class="btn btn-primary" formaction="{% url 'signup-page' %}">Sign up</button>
+        <button class="btn btn-primary" formaction="{% url 'signup-page' %}">Sign up</button><br>
+        <i class='mt-5 mb-3 fas fa-laptop' style='font-size:120px;color:white'></i>
+        <i class="mt-5 mb-3 fa fa-car" style="font-size:120px;color:white;"></i>
         </center>
 
     </form>
