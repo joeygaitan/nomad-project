@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}Nomad - Profiles{% endblock %}
+
+{% block content %}
+
+    {% if request.user.profile.is_passenger %}
+        {% if profiles %}
+            {% for profile in profiles %}
+            <a href="#" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">{{ profile.user }}</h5>
+                <small class="text-muted">{{ profile.timestamp }}</small>
+                </div>
+                <p class="mb-1"><img src="" style="height: 75px; width: auto"><br>Starting: {{ profile.starting }}</p>
+
+                <p class="mb-1"><img src="" style="height: 75px; width: auto"><br>Going: {{ profile.destination }}</p>
+                <br>
+                <small><button>Request</button></small>
+                <hr class="breakline">
+            {% endfor %}
+        {% else %}
+            <div class="alert alert-primary" role="alert">No pages to display.</div>
+
+        {% endif %}
+
+    {% else %}
+    <h1> Thanks for being a driver</h1>
+    <br><br>
+    <a href="{% url 'get-ride-page' %}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Edit Your Route</a>
+    <!-- Button with a list of riders -->
+
+    <a href="{% url 'get-ride-page' %}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">View Hitchers</a>
+
+
+    {% endif %}
+    
+
+{% endblock %}
