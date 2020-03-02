@@ -8,6 +8,8 @@ from accounts.forms import UserCreateForm, ProfileForm
 from django.contrib import messages
 from accounts.models import Profile
 from django.views.generic.list import ListView
+from django.contrib.auth.models import User
+
 
 
 class SignUpView(CreateView):
@@ -65,3 +67,9 @@ class ProfilesListView(ListView):
         return render(request, 'accounts/profile_list.html', {
           'profiles': profiles
         })
+
+class GetRiders(CreateView):
+
+    def get(self, request):
+        riders = User.objects.filter(profile__is_passenger=True)  # __ because it's an extended model to the User, so need it
+        return render(request, 'accounts/riders.html', {'riders': riders})
