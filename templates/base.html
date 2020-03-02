@@ -27,7 +27,7 @@
   <body>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-      <center><a href="{% url 'home-page' %}"><img src="{% static 'assets/thumb.png' %}" class="icon"></a></center>
+      <center><a href="{% url 'home-page' %}"><img src="{% static 'assets/techThumb.svg' %}" class="icon"></a></center>
       <a class="navbar-brand" href="{% url 'home-page' %}"><i></i> Nomad    {% if request.user.profile.is_passenger == null %} - Welcome! {% else %}{% if request.user.profile.is_passenger %} - Passenger {% else %} Driver {% endif%} {% endif %} 
       </a>
 
