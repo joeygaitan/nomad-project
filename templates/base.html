@@ -60,7 +60,7 @@
                       {% else %}
                       {% endif %}
                       <li class="nav-item">
-                        <a class="nav-link" href="#">Account</a>
+                        <a class="nav-link" href="{% url 'account-page' %}">Account</a>
                       </li>
                       {% if request.user.is_authenticated %}
 
