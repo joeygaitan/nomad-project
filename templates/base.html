@@ -27,7 +27,7 @@
   <body>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-      <center><a href="{% url 'home-page' %}"><img src="{% static 'assets/thumb.png' %}" class="icon"></a></center>
+      <center><a href="{% url 'home-page' %}"><img src="{% static 'assets/Artboard 1.svg' %}" class="icon"></a></center>
       <a class="navbar-brand" href="{% url 'home-page' %}"><i></i> Nomad    {% if request.user.profile.is_passenger == null %} - Welcome! {% else %}{% if request.user.profile.is_passenger %} - For Passenger {% else %} - For Driver {% endif%} {% endif %} 
       </a>
 
@@ -50,7 +50,7 @@
 
                 <ul class="navbar-nav mr-auto">
                       <li class="nav-item">
-                        <a class="nav-link" href="{% url 'get-ride-page' %}">My Profile<span class="sr-only"></span></a>
+                        <a class="nav-link" href="{% url 'get-ride-page' %}">Get/Give Ride<span class="sr-only"></span></a>
                       </li>
                       {% if request.user.profile.is_passenger %}
                       <li class="nav-item">
@@ -58,9 +58,6 @@
                       </li>
                       {% else %}
                       {% endif %}
-                      <li class="nav-item">
-                        <a class="nav-link" href="#">Ride History</a>
-                      </li>
                       <li class="nav-item">
                         <a class="nav-link" href="#">Account</a>
                       </li>

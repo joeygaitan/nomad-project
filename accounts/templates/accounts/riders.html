@@ -5,4 +5,17 @@
 {% block content %}
 <h1> all riders!!</h1>
 
+{% for rider in riders %}
+            <a href="#" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">{{ rider.profile.user }}</h5>
+                <small class="text-muted">{{ rider.profile.timestamp }}</small>
+                </div>
+                <p class="mb-1"><img src="" style="height: 75px; width: auto"><br>Starting: {{ rider.profile.starting }}</p>
+
+                <p class="mb-1"><img src="" style="height: 75px; width: auto"><br>Going: {{ rider.profile.destination }}</p>
+                <br>
+                <small><button>Connect</button></small>
+                <hr class="breakline">
+{% endfor %}
 {% endblock %}

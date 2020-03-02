@@ -3,8 +3,8 @@ body{
     background: linear-gradient(90deg, rgba(34,36,27,1) 74%, rgba(34,36,27,1) 100%);
 }
 .icon {
-    height: 30px;
-    width: 30px
+    height: 120px;
+    width: 100px
 }
 
 .breakline {

@@ -59,17 +59,21 @@ def update_profile(request):
 
 class ProfilesListView(ListView):
     """ Renders a list of all Pages. """
-    model = Profile
+    # model = Profile
+
+    # def get(self, request):
+    #     """ GET a list of Pages. """
+    #     profiles = self.get_queryset().all()
+    #     return render(request, 'accounts/profile_list.html', {
+    #       'profiles': profiles
+    #     })
 
     def get(self, request):
-        """ GET a list of Pages. """
-        profiles = self.get_queryset().all()
-        return render(request, 'accounts/profile_list.html', {
-          'profiles': profiles
-        })
+        riders = User.objects.filter(profile__is_passenger=False)
+        return render(request, 'accounts/profile_list.html', {'profiles': riders})
 
 class GetRiders(CreateView):
 
     def get(self, request):
-        riders = User.objects.filter(profile__is_passenger=True)  # __ because it's an extended model to the User, so need it
+        riders = User.objects.filter(profile__is_passenger=True)
         return render(request, 'accounts/riders.html', {'riders': riders})
