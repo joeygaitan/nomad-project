@@ -83,3 +83,7 @@ def login_view_profile(request):
     args = {'user': user}
     return render(request, 'accounts/account.html', args)
 
+class ConfirmPage(CreateView):
+
+    def get(self, request):
+        return render(request, 'accounts/request_confirm.html')
