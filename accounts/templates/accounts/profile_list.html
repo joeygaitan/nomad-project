@@ -3,9 +3,10 @@
 {% block title %}Nomad - Profiles{% endblock %}
 
 {% block content %}
-<h4><center>Drivers</center></h4>
     {% if request.user.profile.is_passenger %}
         {% if profiles %}
+        <h4><center>Available Drivers</center></h4>
+
             {% for profile in profiles %}
             <a href="#" class="list-group-item list-group-item-action">
                 <div class="d-flex w-100 justify-content-between">
@@ -16,7 +17,8 @@
 
                 <p class="mb-1"><img src="" style="height: 75px; width: auto"><br>Going: {{ profile.profile.destination }}</p>
                 <br>
-                <small><button>Request</button></small>
+                <small> <a href="{% url 'confirm-page' %}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Request</a>
+                </small>
                 <hr class="breakline">
             {% endfor %}
         {% else %}
@@ -31,7 +33,7 @@
     <!-- Button with a list of riders -->
 
     <a href="{% url 'get-riders-page' %}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">View Hitchers</a>
-<br>
+    <br>
     <i class='mt-5 mb-3 fas fa-laptop' style='font-size:120px;color:white'></i>
     <i class="mt-5 mb-3 fa fa-car" style="font-size:120px;color:white;"></i>
 

@@ -77,3 +77,13 @@ class GetRiders(CreateView):
     def get(self, request):
         riders = User.objects.filter(profile__is_passenger=True)
         return render(request, 'accounts/riders.html', {'riders': riders})
+
+def login_view_profile(request):
+    user = request.user
+    args = {'user': user}
+    return render(request, 'accounts/account.html', args)
+
+class ConfirmPage(CreateView):
+
+    def get(self, request):
+        return render(request, 'accounts/request_confirm.html')
