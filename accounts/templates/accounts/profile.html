@@ -5,10 +5,12 @@
 
 {% block content %}
 
-<form method="post">
+<center><form method="post">
     {% csrf_token %}
     {{ profile_form.as_p }}
     <button type="submit">Save changes</button>
   </form>
-
+  <i class='mt-5 mb-3 fas fa-laptop' style='font-size:120px;color:white'></i>
+  <i class="mt-5 mb-3 fa fa-car" style="font-size:120px;color:white;"></i>
+</center>
 {% endblock %}

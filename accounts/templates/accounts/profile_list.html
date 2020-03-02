@@ -3,18 +3,18 @@
 {% block title %}Nomad - Profiles{% endblock %}
 
 {% block content %}
-
+<h4><center>Available Rides</center></h4>
     {% if request.user.profile.is_passenger %}
         {% if profiles %}
             {% for profile in profiles %}
             <a href="#" class="list-group-item list-group-item-action">
                 <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">{{ profile.user }}</h5>
+                <h2 class="mb-1">{{ profile.user }}</h3>
                 <small class="text-muted">{{ profile.timestamp }}</small>
                 </div>
-                <p class="mb-1"><img src="" style="height: 75px; width: auto"><br>Starting: {{ profile.starting }}</p>
+                <p class="mb-1"><img src="" style="height: 75px; width: auto"><br><h6>Starting:</h6> {{ profile.starting }}</p>
 
-                <p class="mb-1"><img src="" style="height: 75px; width: auto"><br>Going: {{ profile.destination }}</p>
+                <p class="mb-1"><img src="" style="height: 75px; width: auto"><br><h6>Going: </h6>{{ profile.destination }}</p>
                 <br>
                 <small><button>Request</button></small>
                 <hr class="breakline">
@@ -31,6 +31,9 @@
     <!-- Button with a list of riders -->
 
     <a href="{% url 'get-riders-page' %}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">View Hitchers</a>
+
+    <i class='mt-5 mb-3 fas fa-laptop' style='font-size:120px;color:white'></i>
+    <i class="mt-5 mb-3 fa fa-car" style="font-size:120px;color:white;"></i>
 
 
     {% endif %}
