@@ -26,3 +26,10 @@ pip3 install -r requirements.txt
 ```
 python manage.py runserver 8080
 ```
+
+## Built With
+
+* [Django](https://www.djangoproject.com/) - The web framework used
+* [Python](https://www.python.org/) - Language
+* [HTML](https://en.wikipedia.org/wiki/HTML) - For webpage
+* [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets) - To style
