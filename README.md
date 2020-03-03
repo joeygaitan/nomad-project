@@ -33,3 +33,8 @@ python manage.py runserver 8080
 * [Python](https://www.python.org/) - Language
 * [HTML](https://en.wikipedia.org/wiki/HTML) - For webpage
 * [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets) - To style
+
+## Authors
+
+* Cao Mai - portfolio can be found at:
+https://www.makeschool.com/portfolio/Cao-Mai
