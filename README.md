@@ -44,3 +44,6 @@ python manage.py runserver 8080
 
 * Cao Mai - portfolio can be found at:
 https://www.makeschool.com/portfolio/Cao-Mai
+
+* Tristan Fossan - portfolio can be found at:
+https://www.makeschool.com/portfolio/Tristan-Fossan
